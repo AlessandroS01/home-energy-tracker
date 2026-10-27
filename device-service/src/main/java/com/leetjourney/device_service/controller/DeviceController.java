@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/devices")
+@RequestMapping("/api/v1/device")
 @AllArgsConstructor
 public class DeviceController {
 
