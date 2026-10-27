@@ -10,4 +10,5 @@ public class DeviceServiceApplication {
 		SpringApplication.run(DeviceServiceApplication.class, args);
 	}
 
+
 }
