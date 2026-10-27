@@ -20,7 +20,7 @@ public class LoggingAspect {
     }
 
     @AfterReturning(pointcut = "serviceMethods()", returning = "result")
-    public void logAfter(JoinPoint joinPoint, Object result) {
+    public void logAfter(Object result) {
         log.info("Service method result: {}", result);
     }
 
