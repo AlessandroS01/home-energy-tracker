@@ -7,6 +7,8 @@ import com.leetjourney.device_service.repository.DeviceRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class DeviceService {
@@ -51,6 +53,12 @@ public class DeviceService {
         deviceRepository.deleteById(id);
     }
 
+    public List<DeviceDto> getAllDevicesByUserId(Long userId) {
+        List<Device> devices = deviceRepository.findByUserId(userId);
+        return devices.stream()
+                .map(this::mapToDto)
+                .toList();
+    }
 
     private DeviceDto mapToDto(Device device) {
         return DeviceDto.builder()
